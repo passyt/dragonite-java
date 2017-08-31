@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<SplitPane dividerPositions="0.4" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+    <items>
+        <BorderPane prefHeight="200.0" prefWidth="200.0">
+            <center>
+                <JFXListView fx:id="serverListView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+            </center>
+            <bottom>
+                <HBox prefHeight="40.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <JFXButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Add" textFill="#00897b" HBox.hgrow="ALWAYS" />
+                        <JFXButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Import" textFill="#039be5" HBox.hgrow="ALWAYS" />
+                    </children>
+                </HBox>
+            </bottom>
+        </BorderPane>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <top>
+            <TitledPane animated="false" text="Local Configuration" BorderPane.alignment="CENTER">
+               <content>
+                  <GridPane>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                     </rowConstraints>
+                     <columnConstraints>
+                        <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="-Infinity" />
+                     </columnConstraints>
+                     <children>
+                        <Label text="SOCKS5 Port:" />
+                        <JFXTextField focusColor="#6b6b6b" unFocusColor="#b5b5b5" GridPane.columnIndex="1" />
+                        <Label text="Download Mbps:" GridPane.rowIndex="1" />
+                        <JFXTextField focusColor="#6b6b6b" layoutX="120.0" layoutY="24.0" unFocusColor="#b5b5b5" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label layoutX="20.0" layoutY="58.0" text="Upload Mbps:" GridPane.rowIndex="2" />
+                        <JFXTextField focusColor="#6b6b6b" layoutX="120.0" layoutY="54.0" unFocusColor="#b5b5b5" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label layoutX="20.0" layoutY="88.0" text="ACL File:" GridPane.rowIndex="3" />
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <children>
+                              <Label maxWidth="1.7976931348623157E308" text="Select File" HBox.hgrow="ALWAYS" />
+                              <JFXButton mnemonicParsing="false" text="CLEAR" textFill="#f50000" />
+                              <JFXButton layoutX="219.0" layoutY="14.0" mnemonicParsing="false" text="..." />
+                           </children>
+                        </HBox>
+                        <Label layoutX="20.0" layoutY="118.0" text="Actions:" GridPane.rowIndex="4" />
+                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <children>
+                              <JFXButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Reset" HBox.hgrow="ALWAYS" />
+                              <JFXButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Apply" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                     </children></GridPane>
+               </content>
+            </TitledPane>
+         </top>
+         <center>
+            <ListView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </center>
+         <bottom>
+            <TitledPane animated="false" text="Statistics" BorderPane.alignment="CENTER">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </TitledPane>
+         </bottom>
+      </BorderPane>
+    </items>
+</SplitPane>
